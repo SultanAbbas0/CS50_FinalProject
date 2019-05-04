@@ -1,0 +1,11 @@
+{% extends "cs50_finalproject/base.html" %}
+{% block title %}Logout{% endblock %}
+
+{% block content %}
+<div class="alert alert-info">
+    You have logged out successfully! -
+      <small class="text-muted">
+        <a href={% url "login" %}>Log In Again</a>
+      </small>
+</div>
+{% endblock content %}

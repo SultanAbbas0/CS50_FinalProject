@@ -1,0 +1,20 @@
+@media(max-width:576px)
+{
+  .custom-sm-mt
+{
+  margin-top: 0px !important;
+}
+}
+.card{
+ background-color: inherit;
+
+}
+.custom-mt-login{
+  margin:6.5% auto;
+}
+.custom-mt-register{
+  margin:1% auto;
+}
+a{
+  color: blue;
+}

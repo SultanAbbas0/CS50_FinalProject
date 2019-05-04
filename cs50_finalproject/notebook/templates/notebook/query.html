@@ -1,0 +1,30 @@
+{% extends "cs50_finalproject/base.html" %}
+{% load static %}
+{% block title %}Query Words{% endblock %}
+
+{% block js %}
+<script src="{% static 'js/word.js' %}"></script>
+{% endblock js %}
+
+{% block content %}
+  <div class="col-12 col-md-11 col-lg-6 ml-auto mr-auto mb-3 mt-3">
+    <input type="text" class="form-control" placeholder="Search for a word"  id="search_word">
+  </div>
+
+  <div class="col-12 col-md-11 col-lg-6 m-auto">
+    <div class="card mb-3 text-center">
+        <div class="card-header content" id="word-meaning">
+            Word : Meaning
+        </div>
+
+        <div class="card-body">
+          <p class="card-text content" id="sentence">Sentence</p>
+        </div>
+        <div class="card-footer text-muted content" id="refrence">
+          Refrence
+        </div>
+
+    </div>
+  </div>
+
+{% endblock content %}

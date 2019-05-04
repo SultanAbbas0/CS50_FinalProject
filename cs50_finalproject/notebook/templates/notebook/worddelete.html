@@ -1,0 +1,19 @@
+{% extends "cs50_finalproject/base.html" %}
+{% block title %}Delete{% endblock %}
+
+{% block content %}
+<div class="card col-12">
+      <form method="post">
+            <!--Protection-->
+            {% csrf_token %}
+            <fieldset class="form-group">
+              <legend class="border-bottom mb-4 h2">Delete Post</legend>
+              <h2>Are you sure you want to delete the word "{{ object }}"</h2>
+            </fieldset>
+            <div class="form-group">
+              <button class="btn btn-outline-danger" type="submit">Yes, Delete</button>
+              <a class="btn btn-outline-secondary" href="{% url 'my-words' %}">Cancel</a>
+            </div>
+      </form>
+</div>
+{% endblock content %}

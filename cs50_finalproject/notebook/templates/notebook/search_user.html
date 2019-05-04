@@ -1,0 +1,26 @@
+{% extends "cs50_finalproject/base.html" %}
+{% load static %}
+{% block title %}Search Users{% endblock %}
+
+{% block js %}
+<script src="{% static 'js/search_user.js' %}"></script>
+{% endblock js %}
+
+{% block content %}
+  <div class="col-12 col-md-11 col-lg-6 ml-auto mr-auto mb-3 mt-3">
+
+    <input type="text" class="form-control" autofocus placeholder="Search for a user to check his words"  id="search_user">
+
+    <a href="#" id="url" style="text-decoration:none;">
+      <div class="media rounded border border-secondary bg-secondary mt-2">
+
+        <img class="rounded-circle account-image" id="image" src=" " alt=" " style="width:90px; height:90px;">
+
+        <div class="media-body mt-3 ml-3">
+          <h1 class="content text-white h1" id="username"></h1>
+        </div>
+      </div>
+    </a>
+
+  </div>
+{% endblock content %}

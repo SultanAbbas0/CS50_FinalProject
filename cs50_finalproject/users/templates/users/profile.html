@@ -1,0 +1,32 @@
+{% extends "cs50_finalproject/base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}Profile{% endblock %}
+
+{% block css %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="card mt-3 col-12 col-sm-8">
+  <div class="media mt-1">
+    <img class="rounded-circle account-image" src="{{ user.profile.image.url }}" alt="error">
+    <div class="media-body ml-3">
+      <h1>{{ user.username }} <small class="text-muted h3">({{words_num}} words)</small></h1>
+      <p class="text-secondary">{{ user.email }}</p>
+  </div>
+
+  </div>
+    <form method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Profile Info</legend>
+            {{ u_form|crispy }}
+            {{ p_form|crispy }}
+          </fieldset>
+          <div class="form-group">
+            <button class="btn btn-primary" type="submit">Update</button>
+          </div>
+    </form>
+</div>
+{% endblock content %}

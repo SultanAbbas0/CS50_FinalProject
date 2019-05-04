@@ -1,0 +1,40 @@
+{% extends "cs50_finalproject/base.html" %}
+{% load static %}
+
+{% block title %} Word World {% endblock title %}
+
+
+{% block content %}
+<div class="jumbotron jumbotron-fluid text-center mt-5" style="background:inherit;">
+  <div class="container">
+    <h1 class="display-3">Word World!</h1>
+    <p class="h2">The best place to word your world</p>
+    <hr>
+  </div>
+  {% if user.is_authenticated %}
+    {% if word %}
+      <label>latest Added Word</label>
+      <div class="col-12 col-md-9 col-lg-6 m-auto">
+        <div class="card mb-3 text-center">
+            <div class="card-header">
+              {{ word.word }} : {{ word.meaning }}
+            </div>
+
+            <div class="card-body">
+              <p class="card-text">{{ word.sentence }}.</p>
+            </div>
+
+            {% if word.refrence %}
+            <div class="card-footer text-muted">
+              {{ word.refrence }}
+            </div>
+            {% endif %}
+        </div>
+      </div>
+    {% endif %}
+  {% else %}
+  <a class="btn btn-success btn-lg" href="{% url 'login' %}" role="button">Login</a>
+  <a class="btn btn-success btn-lg" href="{% url 'register' %}" role="button">Sign up</a>
+  {% endif %}
+</div>
+{% endblock content %}

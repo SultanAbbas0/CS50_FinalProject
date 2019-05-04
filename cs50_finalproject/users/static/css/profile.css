@@ -1,0 +1,14 @@
+@media(max-width:576px)
+{
+  .card
+{
+  margin-top: 0px !important;
+}
+}
+.account-image{
+  width: 100px;
+  height: 100px;
+}
+.card{
+  margin:auto;
+}
